@@ -4,7 +4,7 @@
 3. idea
 4. git
 ### 从git clone源码
-git checkout v5.4.2
+git checkout v5.4.3
 ### 打开项目
 ##### 1. 在edit configurations添加new configuration
 ###### Main class: 
