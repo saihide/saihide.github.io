@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h2>Bully algorithm</h2>
+<p><a href="https://en.wikipedia.org/wiki/Bully_algorithm" rel="nofollow">link:Bully_algorithm</a></p>
+<p>In distributed computing，the bully algorithm is a method for dynamically electing a coordinator or leader from a group of distributed computer processes.The process with the **highest process ID number from amongst the non-failed processes **is selected as the coordinator.</p>
+<p><strong>这个算法假设：</strong></p>
+<p>the system is synchronous.</p>
+<p>processes may fail at any time, including during execution of the algorithm.</p>
+<p>a process fails by stopping and returns from failure by restarting.</p>
+<p>there is a failure detector which detects failed processes.</p>
+<p>message delivery between processes is reliable.</p>
+<p>each process knows its own process id and address, and that of every other process.</p>
+<p><strong>这个算法的三种消息类型：</strong></p>
+<p>Election Message: Sent to announce election.</p>
+<p>Answer (Alive) Message: Responds to the Election message.</p>
+<p>Coordinator (Victory) Message: Sent by winner of the election to announce victory.</p>
+<h2>gossip协议</h2>
+<p><a href="https://en.wikipedia.org/wiki/Gossip_protocol" rel="nofollow">link：wiki/Gossip_protocol</a></p>
+<p><a href="http://blog.csdn.net/chen77716/article/details/6275762" rel="nofollow">link：csdn</a></p>
+<p><a href="http://www.doc88.com/p-919959141193.html" rel="nofollow">link：大学的论文</a></p>
+<p>a <strong>communication</strong> protocol.</p>
+<p>Gossip算法又被称为反熵（Anti-Entropy），熵是物理学上的一个概念，代表杂乱无章，而反熵就是在杂乱无章中寻求一致，这充分说明了Gossip的特点：在一个<strong>有界网络中</strong>，每个节点都随机地与其他节点通信，经过一番杂乱无章的通信，最终所有节点的状态都会达成一致。每个节点可能知道所有其他节点，也可能仅知道几个邻居节点，只要这些节可以通过网络连通，最终他们的状态都是一致的，当然这也是疫情传播的特点。<br>
+要注意到的一点是，即使有的节点因宕机而重启，有新节点加入，但经过一段时间后，这些节点的状态也会与其他节点达成一致，也就是说，Gossip天然具有<strong>分布式容错</strong>的优点。Gossip是一个带<strong>冗余的容错算法</strong>，更进一步，Gossip是一个<strong>最终一致性算法</strong>。虽然无法保证在某个时刻所有节点状态一致，但可以保证在”最终“所有节点一致，”最终“是一个现实中存在，但理论上无法证明的时间点。<br>
+因为Gossip不要求节点知道所有其他节点，因此又具有去<strong>中心化的特点</strong>，节点之间完全对等，不需要任何的中心节点。实际上Gossip可以用于众多能接受“最终一致性”的领域：失败检测、路由同步、Pub/Sub、动态负载均衡。<br>
+但Gossip的缺点也很明显，冗余通信会对网路带宽、CUP资源造成很大的负载，而这些负载又受限于通信频率，该频率又影响着算法收敛的速度，后面我们会讲在各种场合下的优化方法。</p>
+<h2>总结</h2>
+<p>es在数据一致性上使用gossip协议(cluster state的数据)。master选举用的是优化的Bully算法，加入discovery.zen.minimum_master_nodes这个参数防止brain split。</p>
+<h2>zen discovery</h2>
+<h4>Ping</h4>
+<p>This is the process where a node uses the discovery mechanisms to find other nodes.</p>
+<p>ping有<strong>多播和单播</strong>两种方式，5.0的时候去掉了Multicast，只支持unicast。</p>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.4/breaking_50_plugins.html#_multicast_plugin_removed" rel="nofollow">link：breaking_50_plugins.html#_multicast_plugin_removed</a></p>
+<p>官网原文：<br>
+Multicast has been removed. Use unicast discovery, or one of the cloud discovery plugins</p>
+<h4>Unicast  单播</h4>
+<p>Unicast discovery requires a list of hosts to use that will act as <strong>gossip routers.</strong></p>
+<pre><code>discovery.zen.ping.unicast.host  //Defaults to 127.0.0.1, [::1]
+</code></pre>
+<p>an array setting or a comma delimited setting</p>
+<pre><code>discovery.zen.ping.unicast.hosts.resolve_timeout  //Defaults to 5s.
+</code></pre>
+<p>The amount of time to wait for DNS lookups on each round of pinging. Specified as time units.</p>
+<h4>master election</h4>
+<pre><code>discovery.zen.ping_timeout //3s
+</code></pre>
+<p>allows for the tweaking of election time to handle cases of slow or congested networks (higher values assure less chance of failure)</p>
+<pre><code>discovery.zen.join_timeout
+</code></pre>
+<p>Once a node joins, it will send a join request to the master.<br>
+with a timeout defaulting at 20 times the ping timeout.</p>
+<p>当主节点挂了，集群里的节点会开始相互ping，选出一个新的master。This pinging round also serves as a protection against (partial) network failures where a node may unjustly think that the master has failed. In this case the node will simply hear from other nodes about the currently active master.</p>
+<pre><code>discovery.zen.master_election.ignore_non_master_pings //false
+</code></pre>
+<p>如果是true,pings from nodes that are not master eligible (nodes where node.master is false) are ignored during master election.node.master是false的节点不会成为master</p>
+<pre><code>discovery.zen.minimum_master_nodes
+</code></pre>
+<p>If this requirement is not met the active master node will step down and a new master election will be begin.</p>
+<p><strong>elasticsearch选举的原则：</strong> 基于5.4.3</p>
+<p>对所有可以成为master的节点，先比较clusterStateVersion，如果一样大，在比较nodeId，大的排在前面，每次选举每个节点都把自己所知道节点排一次序，然后选出第一个（第0位）节点，暂且认为它是master节点。</p>
+<p>如果对某个节点的投票数达到一定的值（可以成为master节点数n/2+1）并且该节点自己也选举自己，那这个节点就是master。否则重新选举。</p>
+<p>对于brain split问题，需要把候选master节点最小值设置为可以成为master节点数n/2+1（quorum ）</p>
+<p><strong>master选举源码分析：</strong></p>
+<pre><code>ElectMasterService
+
+/**
+ * Elects a new master out of the possible nodes, returning it. Returns &lt;tt&gt;null&lt;/tt&gt;
+ * if no master has been elected.
+*/
+public MasterCandidate electMaster(Collection&lt;MasterCandidate&gt; candidates) {
+    assert hasEnoughCandidates(candidates);
+    List&lt;MasterCandidate&gt; sortedCandidates = new ArrayList&lt;&gt;(candidates);
+    sortedCandidates.sort(MasterCandidate::compare);
+    return sortedCandidates.get(0);
+}
+</code></pre>
+<p>开始选举master，入参是master几点的候选节点，先判断有没有足够多的候选人:</p>
+<pre><code>assert hasEnoughCandidates(candidates);
+
+public boolean hasEnoughCandidates(Collection&lt;MasterCandidate&gt; candidates) {
+    if (candidates.isEmpty()) {
+        return false;
+    }
+    if (minimumMasterNodes &lt; 1) {
+        return true;
+    }
+    assert candidates.stream().map(MasterCandidate::getNode).collect(Collectors.toSet()).size() == candidates.size() :
+        "duplicates ahead: " + candidates;
+    return candidates.size() &gt;= minimumMasterNodes;
+}
+</code></pre>
+<p>hasEnoughCandidates方法的作用是检查候选master的数量是否不小于discovery.zen.minimum_master_nodes的值，是否有资格进行选举。之后对候选节点排序，看下compare方法：</p>
+<pre><code>sortedCandidates.sort(MasterCandidate::compare);
+
+/**
+    * compares two candidates to indicate which the a better master.
+     * A higher cluster state version is better
+     *
+     * @return -1 if c1 is a batter candidate, 1 if c2.
+*/
+public static int compare(MasterCandidate c1, MasterCandidate c2) {
+    // we explicitly swap c1 and c2 here. the code expects "better" is lower in a sorted
+    // list, so if c2 has a higher cluster state version, it needs to come first.
+    int ret = Long.compare(c2.clusterStateVersion, c1.clusterStateVersion);
+    if (ret == 0) {
+        ret = compareNodes(c1.getNode(), c2.getNode());
+    }
+        return ret;
+}
+</code></pre>
+<p>先比较clusterStateVersion，clusterStateVersion大的排在前面，如果clusterStateVersion一样，再比较节点信息：</p>
+<pre><code>/** master nodes go before other nodes, with a secondary sort by id **/
+private static int compareNodes(DiscoveryNode o1, DiscoveryNode o2) {
+    if (o1.isMasterNode() &amp;&amp; !o2.isMasterNode()) {
+        return -1;
+    }
+    if (!o1.isMasterNode() &amp;&amp; o2.isMasterNode()) {
+        return 1;
+    }
+    return o1.getId().compareTo(o2.getId());
+}
+</code></pre>
+<p>先看这个节点是不是masternode，根据这个配置node.master。如果都是masternode,再比较nodeId,nodeId大的排在前面。返回排在第一个的节点，类似投票给这个节点。</p>
+<p>通过比较节点能“看到”的候选master数量和配置的最小值来确定是否可以进行选举，如果数量不够会导致选举不能进行，这样就可以保证集群不会被分裂。下面以一个图(图片来自于elasticsearch官网)来说明:<br>
+<a href="https://camo.githubusercontent.com/5b398cc6e67d3a21afdc1fc6aeb39009eef438b6/687474703a2f2f696d61676573323031352e636e626c6f67732e636f6d2f626c6f672f3930383630382f3230313730332f3930383630382d32303137303331393031323231393838352d3833373339383036332e6a7067" target="_blank"><img src="https://camo.githubusercontent.com/5b398cc6e67d3a21afdc1fc6aeb39009eef438b6/687474703a2f2f696d61676573323031352e636e626c6f67732e636f6d2f626c6f672f3930383630382f3230313730332f3930383630382d32303137303331393031323231393838352d3833373339383036332e6a7067" alt="image" data-canonical-src="http://images2015.cnblogs.com/blog/908608/201703/908608-20170319012219885-837398063.jpg" style="max-width:100%;"></a><br>
+假设之前选举了A节点为master，两个switch之间突然断线了，这样就分词了两部分。CDE和AB，因为 minimumMasterNodes的数目为3（集群中5个节点都可以成为master，3=5/2+1），因此cde会可以进行选举假设C成为master。AB两个节点因为少于3所以无法选举，只能一直寻求加入集群，要么线路连通加入到CDE中要么就一直处于寻找集群状态，这样就保证了集群不分裂。</p>
+<p>master候选节点ID排序保证选举一致性及通过设置最小可见候选节点数目避免brain split。节点排序后选举只能保证局部一致性，如果发生节点接收到了错误的集群状态就会选举出错误的master，因此必须有其它措施来保证选举的一致性。这就是上一篇所提到的第二点：被选举的数量达到一定的数目同时自己也选举自己，这个节点才能成为master。这一点体现在zenDiscovery中。</p>
+<h4>fault detection  故障检测</h4>
+<ol>
+<li>master ping集群中的其他节点，校验其他节点是不是alive。</li>
+<li>其他节点ping master，校验master是不是alive,是否需要选举</li>
+</ol>
+<pre><code>discovery.zen.fd.ping_interval  //How often a node gets pinged. Defaults to 1s.
+discovery.zen.fd.ping_timeout //How long to wait for a ping response, defaults to 30s.
+discovery.zen.fd.ping_retries   //How many ping failures / timeouts cause a node to be considered failed. Defaults to 3.
+</code></pre>
+<h4>cluster state updates</h4>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.4/cluster-state.html" rel="nofollow">link：cluster-state</a></p>
+<p>只有主节点可以改变集群状态。master一次只执行一个集群状态的更新。<strong>applies</strong> the required changes and <strong>publishes</strong> the updated cluster state to all the other nodes in the cluster. Each node receives the publish message, acknowledges it, but does not yet apply it. If the master does not receive acknowledgement from <strong>at least discovery.zen.minimum_master_nodes nodes</strong> within a certain time (controlled by the <strong>discovery.zen.commit_timeout</strong> setting and defaults to <strong>30</strong> seconds) the cluster state change is <strong>rejected</strong>。当有足够的节点响应，the cluster state is <strong>committed</strong> and a message will be sent to all the nodes。The nodes then proceed to <strong>apply</strong> the new cluster state to their internal state.The master node waits for all nodes to respond, up to a timeout, before going ahead processing the next updates in the queue.<br>
+The <strong>discovery.zen.publish_timeout</strong> is set by default to 30 seconds and is measured from the moment the <strong>publishing</strong> started. Both timeout settings can be changed dynamically through the cluster update settings api</p>
+<h4>no master block</h4>
+<p>一个完全可用的集群，必须有一个master和discovery.zen.minimum_master_nodes这么多数量的master eligible nodes(包括master),</p>
+<pre><code>discovery.zen.no_master_block： //default write
+</code></pre>
+<p><strong>all</strong>：没有master的时候，所有的读写操作都会拒绝。applies for <strong>api cluster state read</strong> or write operations, like the get index settings, put mapping and cluster state api.</p>
+<p><strong>write</strong>：写操作拒绝，读操作允许。based on the last known cluster configuration. This may result in <strong>partial reads of stale data</strong> as this node may be <strong>isolated</strong> from the rest of the cluster.</p>
+<p>这个配置不会应用在nodes-based apis。比如cluster stats, node info and node stats apis。Requests to these apis will not be blocked and can run on any available node.</p>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
