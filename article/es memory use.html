@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MarkdownPad Document</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style type="text/css">
+    /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+    /* Author: Nicolas Hery - http://nicolashery.com */
+    /* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+    /* Source: https://github.com/nicolahery/markdownpad-github */
+
+    /* RESET
+    =============================================================================*/
+
+    html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    /* BODY
+    =============================================================================*/
+
+    body {
+      font-family: Helvetica, arial, freesans, clean, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+      padding: 20px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    body>*:first-child {
+      margin-top: 0 !important;
+    }
+
+    body>*:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    /* BLOCKS
+    =============================================================================*/
+
+    p, blockquote, ul, ol, dl, table, pre {
+      margin: 15px 0;
+    }
+
+    /* HEADERS
+    =============================================================================*/
+
+    h1, h2, h3, h4, h5, h6 {
+      margin: 20px 0 10px;
+      padding: 0;
+      font-weight: bold;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+      font-size: inherit;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #000;
+    }
+
+    h2 {
+      font-size: 24px;
+      border-bottom: 1px solid #ccc;
+      color: #000;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    h4 {
+      font-size: 16px;
+    }
+
+    h5 {
+      font-size: 14px;
+    }
+
+    h6 {
+      color: #777;
+      font-size: 14px;
+    }
+
+    body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+      margin-top: 10px;
+    }
+
+    /* LINKS
+    =============================================================================*/
+
+    a {
+      color: #4183C4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* LISTS
+    =============================================================================*/
+
+    ul, ol {
+      padding-left: 30px;
+    }
+
+    ul li > :first-child,
+    ol li > :first-child,
+    ul li ul:first-of-type,
+    ol li ol:first-of-type,
+    ul li ol:first-of-type,
+    ol li ul:first-of-type {
+      margin-top: 0px;
+    }
+
+    ul ul, ul ol, ol ol, ol ul {
+      margin-bottom: 0;
+    }
+
+    dl {
+      padding: 0;
+    }
+
+    dl dt {
+      font-size: 14px;
+      font-weight: bold;
+      font-style: italic;
+      padding: 0;
+      margin: 15px 0 5px;
+    }
+
+    dl dt:first-child {
+      padding: 0;
+    }
+
+    dl dt>:first-child {
+      margin-top: 0px;
+    }
+
+    dl dt>:last-child {
+      margin-bottom: 0px;
+    }
+
+    dl dd {
+      margin: 0 0 15px;
+      padding: 0 15px;
+    }
+
+    dl dd>:first-child {
+      margin-top: 0px;
+    }
+
+    dl dd>:last-child {
+      margin-bottom: 0px;
+    }
+
+    /* CODE
+    =============================================================================*/
+
+    pre, code, tt {
+      font-size: 12px;
+      font-family: Consolas, "Liberation Mono", Courier, monospace;
+    }
+
+    code, tt {
+      margin: 0 0px;
+      padding: 0px 0px;
+      white-space: nowrap;
+      border: 1px solid #eaeaea;
+      background-color: #f8f8f8;
+      border-radius: 3px;
+    }
+
+    pre>code {
+      margin: 0;
+      padding: 0;
+      white-space: pre;
+      border: none;
+      background: transparent;
+    }
+
+    pre {
+      background-color: #f8f8f8;
+      border: 1px solid #ccc;
+      font-size: 13px;
+      line-height: 19px;
+      overflow: auto;
+      padding: 6px 10px;
+      border-radius: 3px;
+    }
+
+    pre code, pre tt {
+      background-color: transparent;
+      border: none;
+    }
+
+    kbd {
+      -moz-border-bottom-colors: none;
+      -moz-border-left-colors: none;
+      -moz-border-right-colors: none;
+      -moz-border-top-colors: none;
+      background-color: #DDDDDD;
+      background-image: linear-gradient(#F1F1F1, #DDDDDD);
+      background-repeat: repeat-x;
+      border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+      border-image: none;
+      border-radius: 2px 2px 2px 2px;
+      border-style: solid;
+      border-width: 1px;
+      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+      line-height: 10px;
+      padding: 1px 4px;
+    }
+
+    /* QUOTES
+    =============================================================================*/
+
+    blockquote {
+      border-left: 4px solid #DDD;
+      padding: 0 15px;
+      color: #777;
+    }
+
+    blockquote>:first-child {
+      margin-top: 0px;
+    }
+
+    blockquote>:last-child {
+      margin-bottom: 0px;
+    }
+
+    /* HORIZONTAL RULES
+    =============================================================================*/
+
+    hr {
+      clear: both;
+      margin: 15px 0;
+      height: 0px;
+      overflow: hidden;
+      border: none;
+      background: transparent;
+      border-bottom: 4px solid #ddd;
+      padding: 0;
+    }
+
+    /* TABLES
+    =============================================================================*/
+
+    table th {
+      font-weight: bold;
+    }
+
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 6px 13px;
+    }
+
+    table tr {
+      border-top: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8;
+    }
+
+    /* IMAGES
+    =============================================================================*/
+
+    img {
+      max-width: 100%
+    }
+  </style>
+  <style type="text/css">
+    .highlight  { background: #ffffff; }
+    .highlight .c { color: #999988; font-style: italic } /* Comment */
+    .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+    .highlight .k { font-weight: bold } /* Keyword */
+    .highlight .o { font-weight: bold } /* Operator */
+    .highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+    .highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+    .highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+    .highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+    .highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+    .highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+    .highlight .ge { font-style: italic } /* Generic.Emph */
+    .highlight .gr { color: #aa0000 } /* Generic.Error */
+    .highlight .gh { color: #999999 } /* Generic.Heading */
+    .highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+    .highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+    .highlight .go { color: #888888 } /* Generic.Output */
+    .highlight .gp { color: #555555 } /* Generic.Prompt */
+    .highlight .gs { font-weight: bold } /* Generic.Strong */
+    .highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+    .highlight .gt { color: #aa0000 } /* Generic.Traceback */
+    .highlight .kc { font-weight: bold } /* Keyword.Constant */
+    .highlight .kd { font-weight: bold } /* Keyword.Declaration */
+    .highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+    .highlight .kr { font-weight: bold } /* Keyword.Reserved */
+    .highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+    .highlight .m { color: #009999 } /* Literal.Number */
+    .highlight .s { color: #d14 } /* Literal.String */
+    .highlight .na { color: #008080 } /* Name.Attribute */
+    .highlight .nb { color: #0086B3 } /* Name.Builtin */
+    .highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+    .highlight .no { color: #008080 } /* Name.Constant */
+    .highlight .ni { color: #800080 } /* Name.Entity */
+    .highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+    .highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+    .highlight .nn { color: #555555 } /* Name.Namespace */
+    .highlight .nt { color: #000080 } /* Name.Tag */
+    .highlight .nv { color: #008080 } /* Name.Variable */
+    .highlight .ow { font-weight: bold } /* Operator.Word */
+    .highlight .w { color: #bbbbbb } /* Text.Whitespace */
+    .highlight .mf { color: #009999 } /* Literal.Number.Float */
+    .highlight .mh { color: #009999 } /* Literal.Number.Hex */
+    .highlight .mi { color: #009999 } /* Literal.Number.Integer */
+    .highlight .mo { color: #009999 } /* Literal.Number.Oct */
+    .highlight .sb { color: #d14 } /* Literal.String.Backtick */
+    .highlight .sc { color: #d14 } /* Literal.String.Char */
+    .highlight .sd { color: #d14 } /* Literal.String.Doc */
+    .highlight .s2 { color: #d14 } /* Literal.String.Double */
+    .highlight .se { color: #d14 } /* Literal.String.Escape */
+    .highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+    .highlight .si { color: #d14 } /* Literal.String.Interpol */
+    .highlight .sx { color: #d14 } /* Literal.String.Other */
+    .highlight .sr { color: #009926 } /* Literal.String.Regex */
+    .highlight .s1 { color: #d14 } /* Literal.String.Single */
+    .highlight .ss { color: #990073 } /* Literal.String.Symbol */
+    .highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+    .highlight .vc { color: #008080 } /* Name.Variable.Class */
+    .highlight .vg { color: #008080 } /* Name.Variable.Global */
+    .highlight .vi { color: #008080 } /* Name.Variable.Instance */
+    .highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+    .pl-c {
+      color: #969896;
+    }
+
+    .pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+      color: #0086b3;
+    }
+
+    .pl-e,.pl-en {
+      color: #795da3;
+    }
+
+    .pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+      color: #333;
+    }
+
+    .pl-ent {
+      color: #63a35c;
+    }
+
+    .pl-k,.pl-s,.pl-st {
+      color: #a71d5d;
+    }
+
+    .pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+      color: #df5000;
+    }
+
+    .pl-id {
+      color: #b52a1d;
+    }
+
+    .pl-ii {
+      background-color: #b52a1d;
+      color: #f8f8f8;
+    }
+
+    .pl-sr .pl-cce {
+      color: #63a35c;
+      font-weight: bold;
+    }
+
+    .pl-ml {
+      color: #693a17;
+    }
+
+    .pl-mh,.pl-mh .pl-en,.pl-ms {
+      color: #1d3e81;
+      font-weight: bold;
+    }
+
+    .pl-mq {
+      color: #008080;
+    }
+
+    .pl-mi {
+      color: #333;
+      font-style: italic;
+    }
+
+    .pl-mb {
+      color: #333;
+      font-weight: bold;
+    }
+
+    .pl-md,.pl-mdhf {
+      background-color: #ffecec;
+      color: #bd2c00;
+    }
+
+    .pl-mdht,.pl-mi1 {
+      background-color: #eaffea;
+      color: #55a532;
+    }
+
+    .pl-mdr {
+      color: #795da3;
+      font-weight: bold;
+    }
+
+    .pl-mo {
+      color: #1d3e81;
+    }
+    .task-list {
+      padding-left:10px;
+      margin-bottom:0;
+    }
+
+    .task-list li {
+      margin-left: 20px;
+    }
+
+    .task-list-item {
+      list-style-type:none;
+      padding-left:10px;
+    }
+
+    .task-list-item label {
+      font-weight:400;
+    }
+
+    .task-list-item.enabled label {
+      cursor:pointer;
+    }
+
+    .task-list-item+.task-list-item {
+      margin-top:3px;
+    }
+
+    .task-list-item-checkbox {
+      display:inline-block;
+      margin-left:-20px;
+      margin-right:3px;
+      vertical-align:1px;
+    }
+  </style>
+</head>
+<body>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/5.5/query-cache.html" rel="nofollow">elasticsearch/reference/5.5/query-cache</a></p>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/filter-caching.html" rel="nofollow">www.elastic.co/guide/en/elasticsearch/guide/current/filter-caching.html</a></p>
+<p><a href="http://opensourceconnections.com/blog/2017/07/10/caching_in_elasticsearch/" rel="nofollow">opensourceconnections.com/blog/2017/07/10/caching_in_elasticsearch</a></p>
+<p>总结：</p>
+<blockquote>
+  <p>热点segment文件会被OS加载到filesystemcache，index buffer的数据refresh后也会近filesystemcache, 就是jvm heap之外的内存</p>
+</blockquote>
+<p><strong>es的heap是怎么被瓜分的：</strong></p>
+<ol>
+  <li>
+    <p>segment memory:</p>
+    <p>词典 (Term Dictionary)的前缀索引(Term   Index)，FST数据结构，空间占用小，Lucene打开索引的时候将其<strong>全量装载到内存中</strong>，加快磁盘上词典查询速度的同时减少随机磁盘访问次数。ES的data   node存储数据并非只是耗费磁盘空间的，为了加速数据的访问，<strong>每个segment都有会一些索引数据驻留在heap里</strong>, 并且这部分heap是<strong>无法被GC掉的</strong>！当一个node的segment memory占用过多的时候，就需要考虑删除、归档数据，或者扩容了。因此segment越多，瓜分掉的heap也越多这个待考证，</p>
+  </li>
+</ol>
+<p>查看一个索引所有segment的memory占用情况:</p>
+<pre><code>GET /_cat/segments/indexname?v&amp;h=shard,segment,size,size.memory
+</code></pre>
+<p><a href="https://camo.githubusercontent.com/cf5f7bb2cfab7d4d4ad9869716af68278e84511f/68747470733a2f2f656c61737469637365617263682e636e2f75706c6f6164732f61727469636c652f32303135313232322f61336235306163663062363338326666616661356631373635613638326536632e706e67" target="_blank"><img src="https://camo.githubusercontent.com/cf5f7bb2cfab7d4d4ad9869716af68278e84511f/68747470733a2f2f656c61737469637365617263682e636e2f75706c6f6164732f61727469636c652f32303135313232322f61336235306163663062363338326666616661356631373635613638326536632e706e67" alt="image" data-canonical-src="https://elasticsearch.cn/uploads/article/20151222/a3b50acf0b6382ffafa5f1765a682e6c.png" style="max-width:100%;"></a></p>
+<p>查看一个node上所有segment占用的memory总和:</p>
+<pre><code>GET /_cat/nodes?v&amp;h=name,port,sm
+</code></pre>
+<p><a href="https://camo.githubusercontent.com/0ea45945fefd396104e198a8eaa77f7790254721/68747470733a2f2f656c61737469637365617263682e636e2f75706c6f6164732f61727469636c652f32303135313232322f66633866666531383166326361313330643164363564616364646665623537382e706e67" target="_blank"><img src="https://camo.githubusercontent.com/0ea45945fefd396104e198a8eaa77f7790254721/68747470733a2f2f656c61737469637365617263682e636e2f75706c6f6164732f61727469636c652f32303135313232322f66633866666531383166326361313330643164363564616364646665623537382e706e67" alt="image" data-canonical-src="https://elasticsearch.cn/uploads/article/20151222/fc8ffe181f2ca130d1d65dacddfeb578.png" style="max-width:100%;"></a></p>
+<p>那么有哪些途径减少data node上的segment memory占用呢？ 总结起来有三种方法:</p>
+<ul>
+  <li>删除不用的索引</li>
+  <li>关闭索引 （文件仍然存在于磁盘，只是释放掉内存）。需要的时候可以重新打开。</li>
+  <li>定期对不再更新的索引做force merge。实质是对segment file强制做合并，可以节省大量的segment memory。</li>
+</ul>
+<ol start="2">
+  <li>
+    <p>filter cache 这个缓存也是常驻heap，无法GC的。我的经验是默认的10% heap设置工作得够好了，如果实际使用中heap没什么压力的情况下，才考虑加大这个设置。</p>
+  </li>
+  <li>
+    <p>Field Data cache</p>
+    <p>在有大量排序、数据聚合的应用场景，可以说field data cache是性能和稳定性的杀手。ES2.0以后，正式默认启用<strong>Doc Values</strong>特性，将field data在indexing time构建在磁盘上，经过一系列优化，可以达到比之前采用field data cache机制更好的性能。因此需要<strong>限制对field data cache的使用，最好是完全不用</strong>，可以极大释放heap压力。 设想如果有一个字段是analyzed过的，而用户去点击对应字段的排序表头是什么后果？ 一来排序的结果并不是用户想要的，排序的对象实际是词典； 二来analyzed过的字段无法利用doc values，需要装载到field data cache，数据量很大的情况下可能集群就在忙着GC或者根本出不来结果。</p>
+  </li>
+  <li>
+    <p>Bulk Queue</p>
+    <p>一般来说，Bulk queue不会消耗很多的heap，但是见过一些用户为了提高bulk的速度，客户端设置了很大的并发量，并且将bulk Queue设置到不可思议的大，比如好几千。 Bulk Queue是做什么用的？当所有的bulk thread都在忙，无法响应新的bulk request的时候，将request在内存里排列起来，然后慢慢清掉。 这在应对短暂的请求爆发的时候有用，但是如果集群本身索引速度一直跟不上，设置的好几千的queue都满了会是什么状况呢？ 取决于一个bulk的数据量大小，乘上queue的大小，heap很有可能就不够用，内存溢出了。一般来说官方默认的thread pool设置已经能很好的工作了，建议不要随意去“调优”相关的设置，很多时候都是适得其反的效果。</p>
+  </li>
+  <li>
+    <p>Indexing Buffer</p>
+    <p>Indexing Buffer是用来缓存新数据，当其满了或者refresh/flush interval到了，就会以segment file的形式写入到磁盘。 这个参数的默认值是10% heap size。根据经验，这个默认值也能够很好的工作，应对很大的索引吞吐量。 但有些用户认为这个buffer越大吞吐量越高，因此见过有用户将其设置为40%的。到了极端的情况，写入速度很高的时候，40%都被占用，导致OOM。</p>
+  </li>
+  <li>
+    <p>Cluster State Buffer</p>
+    <p>ES被设计成<strong>每个node都可以响应用户的api请求</strong>，因此每个node的内存里都<strong>包含有一份集群状态的拷贝</strong>。这个cluster state包含诸如集群有多少个node，多少个index，每个index的mapping是什么？有多少shard，每个shard的分配情况等等。在一个规模很大的集群，这个状态信息可能会非常大的，耗用的内存空间就不可忽视了。state的更新是由<strong>master node</strong>做完以后<strong>全量散播</strong>到其他结点的。 频繁的状态更新就可以给heap带来很大的压力。cluster state api:</p>
+  </li>
+</ol>
+<pre><code>GET /_cluster/state?pretty
+</code></pre>
+<ol start="7">
+  <li>
+    <p>超大搜索聚合结果集的fetch</p>
+    <p>搜索和聚合计算除了在各个data node并行计算以外，还需要将结果返回给汇总节点进行汇总和排序后再返回。如果返回结果的size设置过大，都会给heap造成很大的压力，特别是数据汇聚节点。超大的size多数情况下都是用户用例不对，比如本来是想计算cardinality，却用了terms aggregation + size:0这样的方式;对大结果集做深度分页；一次性拉取全量数据等等。</p>
+  </li>
+  <li>
+    <p>对<strong>高cardinality</strong>字段做terms aggregation</p>
+    <p>所谓高cardinality，就是<strong>该字段的唯一值比较多</strong>。 比如client ip，可能存在上千万甚至上亿的不同值。 对这种类型的字段做terms aggregation时，需要在内存里生成<strong>海量的分桶</strong>，内存需求会非常高。如果内部再嵌套有其他聚合，情况会更糟糕。  在做日志聚合分析时，一个典型的可以引起性能问题的场景，就是对带有参数的url字段做terms aggregation。 对于访问量大的网站，带有参数的url字段cardinality可能会到数亿，做一次terms aggregation内存开销巨大，然而对带有参数的url字段做聚合通常没有什么意义。 对于这类问题，可以额外索引一个url_stem字段，这个字段索引剥离掉参数部分的url。可以极大降低内存消耗，提高聚合速度。</p>
+  </li>
+  <li>
+    <p>shard request cache 也用jvm heap，只有size=0且query条件没有now才会cache</p>
+  </li>
+</ol>
+<h2>circuit breakers &amp; memory</h2>
+<p>Elasticsearch 有多个断路器，用来避免OutOfMemoryError。每个断路器都指定一个内存使用的限制。还有一个父级断路器，指定总共能使用的memory。集群可以动态的修改这个值。</p>
+<h4>parent circuit breaker</h4>
+<pre><code>indices.breaker.total.limit   //defaults to 70% of JVM heap
+</code></pre>
+<h4>field data circuit breaker</h4>
+<p>预估一个字段加载到内存需要多少空间，</p>
+<pre><code>indices.breaker.fielddata.limit   //defaults to 60% of JVM heap
+</code></pre>
+<p>field  data estimations are multiplied with to determine a final estimation</p>
+<pre><code>indices.breaker.fielddata.overhead  //Defaults to 1.03
+</code></pre>
+<h4>request circuit breaker</h4>
+<p>避免单请求需要的内存超过这个值。（比如聚合计算需要的内存）</p>
+<pre><code>indices.breaker.request.limit    //defaults to 60% of JVM heap
+</code></pre>
+<p>all request estimations are multiplied with to determine a final estimation.</p>
+<pre><code>indices.breaker.request.overhead  //Defaults to 1
+</code></pre>
+<h4>flight requests circuit breaker</h4>
+<p>limit the memory usage of all currently active incoming requests on transport or HTTP level from exceeding a certain amount of memory on a node. The memory usage is based on the <strong>content length of the request itself</strong></p>
+<pre><code>network.breaker.inflight_requests.limit  //defaults to 100% of JVM heap,it is bound by the limit configured for the parent circuit breaker
+</code></pre>
+<p>in flight requests estimations are multiplied with to determine a final estimation</p>
+<pre><code>network.breaker.inflight_requests.overhead  //Defaults to 1
+</code></pre>
+<h4>script compilation circuit breaker</h4>
+<p>limits the number of inline script compilations within a period of time.</p>
+<pre><code>script.max_compilations_per_minute //Defaults to 15.
+</code></pre>
+<p>Elasticsearch supports three kinds of caches: the node query cache, the shard request cache, and the field data cache.</p>
+<h4>field data cache</h4>
+<p>used mainly when sorting on or computing aggregations on a field.</p>
+<p>When Elasticsearch computes aggregations on a field, it loads <strong>all the field values into memory</strong>. For this reason, computing aggregations in Elastisearch can be one of the most <strong>expensive</strong> operations on a query. The field data cache holds the field values while computing aggregations. While Elasticsearch does not track hit/miss rates, it is recommended to set this large enough to hold all the values in memory for a field.</p>
+<p>jvm heap</p>
+<p>the amount of memory used for the field data cache can be controlled using</p>
+<pre><code>indices.fielddata.cache.size   //30% of node heap space, or an absolute value, eg 12GB. Defaults to unbounded
+</code></pre>
+<p>这个是静态的配置，集群的每个节点都要都要配置。<br>
+  可以监控field data的内存使用情况，</p>
+<pre><code># Fielddata summarised by node
+curl -XGET 'localhost:9200/_nodes/stats/indices/fielddata?fields=field1,field2&amp;pretty'
+# Fielddata summarised by node and index
+curl -XGET 'localhost:9200/_nodes/stats/indices/fielddata?level=indices&amp;fields=field1,field2&amp;pretty'
+# Fielddata summarised by node, index, and shard
+curl -XGET 'localhost:9200/_nodes/stats/indices/fielddata?level=shards&amp;fields=field1,field2&amp;pretty'
+# You can use wildcards for field names
+curl -XGET 'localhost:9200/_nodes/stats/indices/fielddata?fields=field*&amp;pretty'
+</code></pre>
+<h2>node query cache (filter cache)</h2>
+<p>es的缓存机制，<strong>使用jvm heap</strong></p>
+<h4>internal_filter_operation</h4>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/_finding_exact_values.html#_internal_filter_operation" rel="nofollow">link:internal_filter_operation</a></p>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/filter-caching.html#" rel="nofollow">link：filter-caching</a></p>
+<p>Elasticsearch如何执行a non-scoring query：</p>
+<ol>
+  <li>Find matching docs.<br>
+    The term query在倒排索引里找到有这个term的文档列表</li>
+  <li>Build a <strong>bitset</strong> （核心，可能被缓存的数据）.<br>
+    The filter then builds a bitset--an array of 1s and 0s。 representing which <strong>documents</strong> <strong>match</strong> the filter<br>
+    Internally, this is represented as a "<strong>roaring bitmap</strong>"</li>
+  <li>Iterate over the bitset(s)<br>
+    Elasticsearch iterates over the bitsets to find the set of matching documents that satisfy all filtering criteria.</li>
+  <li>Increment the usage counter.<br>
+    Elasticsearch can <strong>cache non-scoring queries</strong> for faster access, but it’s silly to cache something that is used only rarely. <strong>Non-scoring queries</strong> are already quite fast due to the inverted index, so we only want to cache queries we know will be **used again **in the future to prevent resource wastage.Elasticsearch caches queries <strong>automatically based on usage frequency</strong>.Elasticsearch tracks the history of query usage on a <strong>per-index basis</strong>. If a non-scoring query has been used a few times (dependent on the <strong>query type</strong>) in the last <strong>256</strong> queries, the query is a candidate for caching. However, not all segments are guaranteed to cache the bitset. Only segments that hold more than <strong>10,000 <strong>documents (or <strong>3% <strong>of the total documents, whichever is larger) will cache the bitset. Because small segments are fast to search and merged out quickly, it doesn’t make sense to cache bitsets here.<br>
+      es可以缓存不打分的查询，但是不会缓存很少使用的query。es会根据使用频率自动做缓存。es会跟踪索引的查询历史，如果在过去的256个查询中出现了一定次数(query type)，并且segment的文档数大于10000或者大于索引总大小的3%时，bitset会被缓存。因为小段很快会消失（merged)。elasticsearch公司观察表明：filter尤其是针</strong>对较小segment的filter</strong>，执行速度</strong>非常快</strong>（执行速度较慢的filter反而较少见）</li>
+</ol>
+<p>Non-scoring queries也就是指querys in <strong>filter context</strong>，There is one queries cache** per node** that is <strong>shared by all shards</strong>.a cache becomes full, the least recently used data is evicted to make way for new data（LRU basis）。</p>
+<p><strong>bitset</strong>：<br>
+  These <strong>cached bitsets are updated incrementally</strong>. As you index new documents, only those <strong>new documents need to be added to the existing bitsets</strong>, rather than having to recompute the entire cached filter over and over. Filters are real-time like the rest of the system; you don’t need to worry about cache expiry.<br>
+  这些被缓存的bitset会增量更新，如果有新的文档，这个新文档会被加到缓存下来的bitset里，不会一次又一次的重现计算filter。</p>
+<p>Although not quite true in reality (execution is a bit more complicated based on how the query planner re-arranges things, and some heuristics based on query cost), you can conceptually think of non-scoring queries as executing before the scoring queries. The job of non-scoring queries is to reduce the number of documents that the more costly scoring queries need to evaluate, resulting in a faster search request.<br>
+  实际的情况并不完全这样，更复杂。从概念上可以这样理解，不打分的query在打分的query之前执行。不打分的query是为了减少文档数，因为打分的query更costly。</p>
+<pre><code>indices.queries.cache.size  //defaults to 10%
+</code></pre>
+<p>这个配置是静态的，每个数据节点必须配置。可以是百分百，也可以是具体的值（512mb）</p>
+<pre><code>index.queries.cache.enabled  //true (default)
+</code></pre>
+<p>这个是索引的配置</p>
+<h4>indexing buffer</h4>
+<p>store newly indexed documents. When it fills up, the documents in the buffer are written to a segment on disk. It is divided between all shards on the node.<br>
+  相关配置是静态的，数据节点必须配置:</p>
+<pre><code>indices.memory.index_buffer_size // defaults to 10%
+</code></pre>
+<p>a percentage or a byte size value.It defaults to 10%, meaning that 10% of the total heap allocated to a node will be used as the indexing buffer size shared across all shards.</p>
+<pre><code>indices.memory.min_index_buffer_size  //Defaults to 48mb.
+</code></pre>
+<p>If the index_buffer_size is specified as a percentage, then this setting can be used to specify an absolute minimum</p>
+<pre><code>indices.memory.max_index_buffer_size   //Defaults to unbounded.
+</code></pre>
+<p>If the index_buffer_size is specified as a percentage, then this setting can be used to specify an absolute maximum. Defaults to unbounded.</p>
+<h4>shard request cache</h4>
+<p>The <strong>shard level</strong> request cache caches query results independently for each shard, also using <strong>LRU</strong> eviction. By default, the request cache also limits clauses: By default, only requests of **size 0 **such as aggregations, counts and suggestions will be cached. If you think a query should be cached, add the “request_cache=true” flag to the request. Not all clauses will be cached. DateTime clauses containing “now” will not be cached; Cached results are invalidated automatically whenever the shard refreshes, but only if the data in the shard has actually changed.</p>
+<pre><code>index.requests.cache.enable   //default true
+</code></pre>
+<pre><code>curl -XGET 'localhost:9200/my_index/_search?request_cache=true&amp;pretty' -H 'Content-Type: application/json' -d'
+{
+  "size": 0,
+  "aggs": {
+    "popular_colors": {
+      "terms": {
+        "field": "colors"
+      }
+    }
+  }
+}
+'
+</code></pre>
+<p>每个请求可以单独设置是否需要cache。<br>
+  请求的size大于0时，即使允许request cache，也不会被cache.<br>
+  The whole JSON body is used as the cache key.</p>
+<pre><code>indices.requests.cache.size  // default maximum size of 1%
+</code></pre>
+<pre><code>curl -XGET 'localhost:9200/_stats/request_cache?human&amp;pretty'
+
+curl -XGET 'localhost:9200/_nodes/stats/indices/request_cache?human&amp;pretty'
+
+</code></pre>
+<p>The size of the cache (in bytes) and the number of evictions</p>
+<h4>MONITORING CACHING</h4>
+<pre><code>GET _cat/nodes?v&amp;h=id,queryCacheMemory,queryCacheEvictions,requestCacheMemory,requestCacheHitCount,requestCacheMissCount,flushTotal,flushTotalTime
+</code></pre>
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
