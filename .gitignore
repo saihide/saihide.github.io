@@ -1,11 +1,12 @@
 ### IDEA project files
-*.idea
+
 *.iml
 *.ipr
 *.iws
 
 ### Gradle template
 .gradle
+.idea
 /out
 /classes
 build/
