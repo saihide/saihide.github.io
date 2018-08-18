@@ -23,15 +23,21 @@
   </div>
 </div>
 
-<div id="main" role="main"></div>
+
+
+<div id="main" role="main">
+    <div id="filter">
+        <p>标签筛选：<select id="tags"></select></p>
+    </div>
+</div>
 
 
 <script type="text/javascript">
 $(function(){
-        $('#main').empty();
+        var tags = new Array();
         $.getJSON("assets/articles.json",function(data){
 			$.each(data,function(infoIndex,info){
-			     var article = $('<article></article>');
+			     var article = $('<article class="article"></article>');
 			     var header = $('<header><h1>'+info.title+'</h1></header>');
 			     $(article).append(header);
 			     var div = $('<div><p>'+info.description+'</p><p>'+info.create_date+'</p></div>');
@@ -41,9 +47,40 @@ $(function(){
                  });
 
 			     $('#main').append(article);
+
+			     var articleTags = info.tags;
+                for (var i=0;i<articleTags.length;i++){
+                    $(article).addClass(articleTags[i]);
+                    if(tags.indexOf(articleTags[i])==-1){
+                        tags.push(articleTags[i]);
+                    }
+                }
 				})
-        })
+
+            //tags初始化
+            var tagsSelect = $('#tags');
+            $(tagsSelect).empty();
+            $(tagsSelect).append("<option value=''>全部</option>");
+            for (var i=0;i<tags.length;i++){
+                $(tagsSelect).append("<option value='"+tags[i]+"'>"+tags[i]+"</option>");
+            }
+        });
+
+        $('#tags').change(function(){
+            var option = $(this).val();
+            if(option==''){
+                $('article').show();
+            }else{
+                $('article').hide();
+                $('.'+option).show();
+            }
+
+        });
+
+
 })
+
+
 </script>
 
 
