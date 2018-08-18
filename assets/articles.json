@@ -4,14 +4,14 @@
     "description": "测试一下",
     "create_date": "2018-08-18",
     "href": "https://saihide.github.io/article/%E7%94%A8IJ%E5%92%8Cgradle%E5%90%AF%E5%8A%A8elasticsearch5.4.3.html",
-    "tags": []
+    "tags": ["es"]
   },
   {
     "title": "inside a shard",
     "description": "测试一下",
     "create_date": "2018-08-18",
     "href": "https://saihide.github.io/article/inside%20a%20shard.html",
-    "tags": []
+    "tags": ["java"]
   },
   {
     "title": "docvalueandfielddata",
