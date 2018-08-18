@@ -7,6 +7,8 @@
 
 <link rel="stylesheet" href="./assets/main.css">
 
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 
 <body id="post-index"><div id="MathJax_Message" style="display: none;"></div>
@@ -21,121 +23,28 @@
   </div>
 </div>
 
-<div>
-
-    <div style="cursor: pointer;" onclick="window.location='https://saihide.github.io/article/%E7%94%A8IJ%E5%92%8Cgradle%E5%90%AF%E5%8A%A8elasticsearch5.4.3.html';">
-        Hello world
-
-        <h1 class="entry-title">用IJ和gradle启动elasticsearch5.4.3</h1>
-        <div class="read-more-content">
-            <p>测试一下...</p>
-        </div>
-
-    </div>
-
-    <article class="hentry">
-        <header>
-    
-    
-        <h1 class="entry-title"><a href="https://saihide.github.io/article/%E7%94%A8IJ%E5%92%8Cgradle%E5%90%AF%E5%8A%A8elasticsearch5.4.3.html" rel="bookmark" title="用IJ和gradle启动elasticsearch5.4.3" itemprop="url">用IJ和gradle启动elasticsearch5.4.3</a></h1>
-    
-        </header>
-  <div class="read-more-content">
-    <p><a href="https://saihide.github.io/article/%E7%94%A8IJ%E5%92%8Cgradle%E5%90%AF%E5%8A%A8elasticsearch5.4.3.html">测试一下...</a></p>
-  </div>
-</article>
+<div id="main" role="main"></div>
 
 
-<article class="hentry">
-  <header>
-    
-    
-    <h1 class="entry-title"><a href="https://saihide.github.io/article/inside%20a%20shard.html" rel="bookmark" title="inside a shard" itemprop="url">inside a shard </a></h1>
-    
-  </header>
-  <div class="read-more-content">
-    <p><a href="https://saihide.github.io/article/inside%20a%20shard.html">介绍...…</a></p>
-  </div>
-</article>
+<script type="text/javascript">
+$(function(){
+        $('#main').empty();
+        $.getJSON("assets/articles.json",function(data){
+			$.each(data,function(infoIndex,info){
+			     var article = $('<article></article>');
+			     var header = $('<header><h1>'+info.title+'</h1></header>');
+			     $(article).append(header);
+			     var div = $('<div><p>'+info.description+'</p><p>'+info.create_date+'</p></div>');
+			     $(article).append(div);
+			     $(article).click(function(){
+			        window.open(info.href);
+                 });
 
-
-<article class="hentry">
-  <header>
-    
-    
-    <h1 class="entry-title"><a href="https://saihide.github.io/article/docvalueandfielddata.html" rel="bookmark" title="docvalueandfielddata" itemprop="url">docvalueandfielddata</a></h1>
-    
-  </header>
-  <div class="read-more-content">
-    <p><a href="https://saihide.github.io/article/docvalueandfielddata.html">简介...</a></p>
-  </div>
-</article>
-
-
-<article class="hentry">
-  <header>
-    
-    
-    <h1 class="entry-title"><a href="https://saihide.github.io/article/quickkeywords.html" rel="bookmark" title="quickkeywords" itemprop="url">quickkeywords</a></h1>
-    
-  </header>
-  <div class="read-more-content">
-    <p> <a href="https://saihide.github.io/article/quickkeywords.html">简介...</a></p>
-  </div>
-</article>
-
-
-<article class="hentry">
-  <header>
-    
-    
-    <h1 class="entry-title"><a href="http://saihide.github.io/article/es%20memory%20use.html" rel="bookmark" title="es memory use 使用" itemprop="url">es memory use 使用</a></h1>
-    
-  </header>
-  <div class="read-more-content">
-    <p><a href="http://saihide.github.io/article/es%20memory%20use.html">简介...</a></p>
-  </div>
-</article>
-
-
-<article class="hentry">
-  <header>
-    
-    
-    <h1 class="entry-title"><a href="https://saihide.github.io/article/es%20directory%20and%20virtual%20memory.html" rel="bookmark" title="es directory and virtual memory" itemprop="url">es directory and virtual memory</a></h1>
-    
-  </header>
-  <div class="read-more-content">
-    <p><a href="https://saihide.github.io/article/es%20directory%20and%20virtual%20memory.html">简介...</a></p>
-  </div>
-</article>
-
-<article class="hentry">
-  <header>
-    
-    
-    <h1 class="entry-title"><a href="https://saihide.github.io/article/es%20node.html" rel="bookmark" title="es node" itemprop="url">es node</a></h1>
-    
-  </header>
-  <div class="read-more-content">
-    <p><a href="https://saihide.github.io/article/es%20node.html">简介...</a></p>
-  </div>
-</article>
-
-
-<article class="hentry">
-  <header>
-    
-    
-    <h1 class="entry-title"><a href="https://saihide.github.io/article/zen%20discovery%20and%20master%20election.html" rel="bookmark" title="zen discovery and master election" itemprop="url">zen discovery and master election</a></h1>
-    
-  </header>
-  <div class="read-more-content">
-    <p><a href="https://saihide.github.io/article/zen%20discovery%20and%20master%20election.html">简介...</a></p>
-  </div>
-</article>
-
-</div>
+			     $('#main').append(article);
+				})
+        })
+})
+</script>
 
 
 </body></html>
