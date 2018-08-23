@@ -1,5 +1,12 @@
 [
   {
+    "title": "cpu cache",
+    "description": "环境准备：jdk, gradle3.3+, IntelliJ IDEA, git.....",
+    "create_date": "2017-10-20",
+    "href": "https://saihide.github.io/article/%E7%94%A8IJ%E5%92%8Cgradle%E5%90%AF%E5%8A%A8elasticsearch5.4.3.html",
+    "tags": ["elasticsearch"]
+  },
+  {
     "title": "用IJ和gradle启动elasticsearch5.4.3",
     "description": "环境准备：jdk, gradle3.3+, IntelliJ IDEA, git.....",
     "create_date": "2017-10-20",
