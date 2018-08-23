@@ -1,56 +1,49 @@
 [
   {
     "title": "用IJ和gradle启动elasticsearch5.4.3",
-    "description": "测试一下",
+    "description": "环境准备：jdk, gradle3.3+, IntelliJ IDEA, git.....",
     "create_date": "2017-10-20",
     "href": "https://saihide.github.io/article/%E7%94%A8IJ%E5%92%8Cgradle%E5%90%AF%E5%8A%A8elasticsearch5.4.3.html",
     "tags": ["elasticsearch"]
   },
   {
     "title": "inside a shard",
-    "description": "测试一下",
+    "description": "sync is a standard system call in the Unix operating system, which commits to disk all data in the kernel filesystem buffers,data which has been scheduled for writing via low-level I/O system calls....",
     "create_date": "2017-10-26",
     "href": "https://saihide.github.io/article/inside%20a%20shard.html",
     "tags": ["elasticsearch"]
   },
   {
-    "title": "docvalueandfielddata",
-    "description": "测试一下",
+    "title": "docvalue and fielddata",
+    "description": "doc_values是磁盘上的数据结构，在文档索引的时候建立，数据可以被访问。fielddata是一种在查询时期生成在缓存里的数据结构...",
     "create_date": "2017-11-09",
     "href": "https://saihide.github.io/article/docvalueandfielddata.html",
     "tags": ["elasticsearch"]
   },
   {
-    "title": "quickkeywords",
-    "description": "测试一下",
-    "create_date": "2017-11-09",
-    "href": "https://saihide.github.io/article/quickkeywords.html",
-    "tags": ["others"]
-  },
-  {
     "title": "es memory use",
-    "description": "测试一下",
+    "description": "jvm heap and file system cache...",
     "create_date": "2017-12-15",
     "href": "http://saihide.github.io/article/es%20memory%20use.html",
     "tags": ["elasticsearch"]
   },
   {
     "title": "es directory and virtual memory",
-    "description": "测试一下",
+    "description": "MMapDirectory....",
     "create_date": "2017-12-15",
     "href": "https://saihide.github.io/article/es%20directory%20and%20virtual%20memory.html",
     "tags": ["elasticsearch"]
   },
   {
     "title": "es node",
-    "description": "测试一下",
+    "description": "节点能处理的网络通讯有两种，http(9200)&transport(9300)。transport只用于节点之间的通讯，http只用于外部的rest请求....",
     "create_date": "2017-12-28",
     "href": "https://saihide.github.io/article/es%20node.html",
     "tags": ["elasticsearch"]
   },
   {
     "title": "zen discovery and master election",
-    "description": "测试一下",
+    "description": "In distributed computing，the bully algorithm is a method for dynamically electing a coordinator or leader from a group of distributed computer processes.The process with the highest process ID number from amongst the non-failed processes is selected as the coordinator....",
     "create_date": "2017-12-28",
     "href": "https://saihide.github.io/article/zen%20discovery%20and%20master%20election.html",
     "tags": ["elasticsearch"]

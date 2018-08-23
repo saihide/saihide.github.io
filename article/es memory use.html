@@ -473,7 +473,7 @@
 <p><a href="http://opensourceconnections.com/blog/2017/07/10/caching_in_elasticsearch/" rel="nofollow">opensourceconnections.com/blog/2017/07/10/caching_in_elasticsearch</a></p>
 <p>总结：</p>
 <blockquote>
-  <p>热点segment文件会被OS加载到filesystemcache，index buffer的数据refresh后也会近filesystemcache, 就是jvm heap之外的内存</p>
+  <p>热点segment文件会被OS加载到file system cache，index buffer的数据refresh后也会进file system cache</p>
 </blockquote>
 <p><strong>es的heap是怎么被瓜分的：</strong></p>
 <ol>
