@@ -468,7 +468,11 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<h2>Bully algorithm</h2>
+<br/>
+<p><a href="https://saihide.github.io/" rel="nofollow">全部文章列表</a></p>
+<h1 align="center">zen discovery and master election</h1>
+<br/>
+<h3>Bully algorithm</h3>
 <p><a href="https://en.wikipedia.org/wiki/Bully_algorithm" rel="nofollow">link:Bully_algorithm</a></p>
 <p>In distributed computing，the bully algorithm is a method for dynamically electing a coordinator or leader from a group of distributed computer processes.The process with the highest process ID number from amongst the non-failed processes is selected as the coordinator.</p>
 <p><strong>这个算法假设：</strong></p>
@@ -482,7 +486,7 @@ vertical-align:1px;
 <p>Election Message: Sent to announce election.</p>
 <p>Answer (Alive) Message: Responds to the Election message.</p>
 <p>Coordinator (Victory) Message: Sent by winner of the election to announce victory.</p>
-<h2>gossip协议</h2>
+<h3>gossip协议</h3>
 <p><a href="https://en.wikipedia.org/wiki/Gossip_protocol" rel="nofollow">link：wiki/Gossip_protocol</a></p>
 <p><a href="http://blog.csdn.net/chen77716/article/details/6275762" rel="nofollow">link：csdn</a></p>
 <p><a href="http://www.doc88.com/p-919959141193.html" rel="nofollow">link：大学的论文</a></p>
@@ -491,9 +495,9 @@ vertical-align:1px;
 要注意到的一点是，即使有的节点因宕机而重启，有新节点加入，但经过一段时间后，这些节点的状态也会与其他节点达成一致，也就是说，Gossip天然具有<strong>分布式容错</strong>的优点。Gossip是一个带<strong>冗余的容错算法</strong>，更进一步，Gossip是一个<strong>最终一致性算法</strong>。虽然无法保证在某个时刻所有节点状态一致，但可以保证在”最终“所有节点一致，”最终“是一个现实中存在，但理论上无法证明的时间点。<br>
 因为Gossip不要求节点知道所有其他节点，因此又具有去<strong>中心化的特点</strong>，节点之间完全对等，不需要任何的中心节点。实际上Gossip可以用于众多能接受“最终一致性”的领域：失败检测、路由同步、Pub/Sub、动态负载均衡。<br>
 但Gossip的缺点也很明显，冗余通信会对网路带宽、CUP资源造成很大的负载，而这些负载又受限于通信频率，该频率又影响着算法收敛的速度，后面我们会讲在各种场合下的优化方法。</p>
-<h2>总结</h2>
+<h3>总结</h3>
 <p>es在数据一致性上使用gossip协议(cluster state的数据)。master选举用的是优化的Bully算法，加入discovery.zen.minimum_master_nodes这个参数防止brain split。</p>
-<h2>zen discovery</h2>
+<h3>zen discovery</h3>
 <h4>Ping</h4>
 <p>This is the process where a node uses the discovery mechanisms to find other nodes.</p>
 <p>ping有<strong>多播和单播</strong>两种方式，5.0的时候去掉了Multicast，只支持unicast。</p>

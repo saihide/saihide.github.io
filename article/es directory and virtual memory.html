@@ -468,7 +468,10 @@ vertical-align:1px;
 </style>
 </head>
 <body>
-<h2>FSDirectory</h2>
+<br/>
+<p><a href="https://saihide.github.io/" rel="nofollow">全部文章列表</a></p>
+<h1 align="center">es directory and virtual memory</h1>
+<h3>FSDirectory</h3>
 <h4>SimpleFSDirectory</h4>
 <p>用Files.newByteChannel(Path, java.nio.file.OpenOption...)。<br>
 并发性能比较差，it synchronizes when multiple threads read from the same file. It's usually better to use NIOFSDirectory or MMapDirectory instead.</p>
@@ -480,9 +483,9 @@ FileChannel open(Path path, OpenOption... options)</p>
 <p>uses <strong>mmap</strong> for reading, and FSDirectory.FSIndexOutput for writing.</p>
 <p>memory mapping uses up a portion of the virtual memory address space in your process equal to the size of the file being mapped. Before using this class, be sure your have plenty of virtual address space</p>
 <p>which is a high-performance directory implementation working directly on the file system cache of the operating system, so copying data to Java heap space is not useful.</p>
-<h2>RAMDirectory</h2>
+<h3>RAMDirectory</h3>
 <p>his class is not intended to work with huge indexes. Everything beyond several hundred megabytes will waste resources (GC cycles), because it uses an internal buffer size of 1024 bytes, producing millions of byte[1024] arrays. This class is optimized for small memory-resident indexes. It also has bad concurrency on multithreaded environments.</p>
-<h2>详细说MMapDirectory</h2>
+<h3>详细说MMapDirectory</h3>
 <h4>操作系统如何完成io</h4>
 <p>他们用复杂的文件系统cache和内存管理来帮你buffer数据。其中最重要的一个feature叫做Virtual Memory，是一个处理超大数据(比如lucene index)的很好的解决方案。它的工作方式非常简单：每个进程都有独立的虚拟地址空间，所有的library，堆，栈空间都映射在这个虚拟空间里。进程可以像访问真实内存一样访问这个虚拟地址空间，底层的OS和MMU一起合作，把这些虚拟地址映射到真实的memory中。这个工作需要page table的帮助，page table由位于MMU硬件里的TLBs(translation lookaside buffers, 它cache了频繁被访问的page)支持。这样，OS可以把所有进程的内存访问请求发布到真实可用的物理内存上，而且对于运行的程序来说是完全透明的。</p>
 <p><a href="https://camo.githubusercontent.com/d1e81f14ef41c9177eaedc541e17d483f809b9bc/687474703a2f2f696d616765732e636e6974626c6f672e636f6d2f692f3136313234372f3230313430332f3231313634383037343539343438302e6a7067" target="_blank"><img src="https://camo.githubusercontent.com/d1e81f14ef41c9177eaedc541e17d483f809b9bc/687474703a2f2f696d616765732e636e6974626c6f672e636f6d2f692f3136313234372f3230313430332f3231313634383037343539343438302e6a7067" alt="image" data-canonical-src="http://images.cnitblog.com/i/161247/201403/211648074594480.jpg" style="max-width:100%;"></a></p>
